@@ -4,8 +4,8 @@ affected_by_bug : 'https://stackoverflow.com/questions/55857428/how-do-i-disable
 version: '1.6.2'
 type: update
 name: 'Disable Webserver on SQL nodes'
-homepage: https://raw.githubusercontent.com/layershift/jps-disableHttpdSqlNodes/master
-baseUrl: https://raw.githubusercontent.com/layershift/jps-disableHttpdSqlNodes/master
+homepage: http://jps.layershift.com/disableHttpdSqlNodes
+baseUrl: http://jps.layershift.com/disableHttpdSqlNodes
 logo: /images/featherDenied.png?_r=${fn.random}
 
 categories:
