@@ -36,8 +36,6 @@ actions:
     - next=0;
      if [ $next -eq 0 ]; then grep PHPMYADMIN_ENABLED /.jelenv; if [ $? -eq 0 ]; then sed 's#PHPMYADMIN_ENABLED=.*#PHPMYADMIN_ENABLED=false#g' -i /.jelenv; service httpd stop; next=1; fi; fi;
      if [ $next -eq 0 ]; then stat /etc/sysconfig/httpd; if [ $? -eq 0 ]; then grep "##Stop Webserver Add-on" /etc/sysconfig/httpd; if [ $? -eq 0 ]; then sed '/##Stop Webserver Add-on.*/,+1d' -i /etc/sysconfig/httpd; fi; service httpd stop; echo -e "##Stop Webserver Add-on\necho "Service disabled by dashboard plugin"; exit 0;\n" >> /etc/sysconfig/httpd; next=1; fi; fi;
-     if [ $next -eq 0 ]; then yum install epel-release && sudo yum install monit; if [ $? -eq 0 ]; then curl -fsSL '${baseUrl}/scripts/sudo_monit' -o /etc/sudoers.d/monit; curl -fsSL '${baseUrl}/scripts/monit_httpd' -o /etc/monit.d/monit_httpd; curl -fsSL '${baseUrl}/scripts/monit_cron' -o /etc/cron.d/monit; systemctl enable monit; systemctl start monit; next=1; fi; fi;
-     if [ $next -eq 0 ]; then grep -q -x "\-I INPUT \-p tcp \-m tcp \-\-dport 80 \-j DROP" /etc/sysconfig/iptables; if [ $? -gt 0 ]; then sed -i "s/*filter/*filter\n-I INPUT -p tcp -m tcp --dport 80 -j DROP/" /etc/sysconfig/iptables; /usr/sbin/service iptables restart; next=1; fi; fi;
      if [ $next -eq 0 ]; then echo "Not compatible"; exit 1; fi;
     user: root
 
@@ -46,8 +44,6 @@ actions:
     - next=0;
      if [ $next -eq 0 ]; then grep PHPMYADMIN_ENABLED /.jelenv; if [ $? -eq 0 ]; then sed 's#PHPMYADMIN_ENABLED=.*#PHPMYADMIN_ENABLED=true#g' -i /.jelenv; service httpd start; next=1; fi; fi;
      if [ $next -eq 0 ]; then grep "##Stop Webserver Add-on" /etc/sysconfig/httpd; if [ $? -eq 0 ]; then sed '/##Stop Webserver Add-on.*/,+1d' -i /etc/sysconfig/httpd; service httpd start; next=1; fi; fi;
-     if [ $next -eq 0 ]; then rpm -q monit; if [ $? -eq 0 ]; then systemctl disable monit; systemctl stop monit; yum remove monit; rm -f /etc/cron.d/monit; service httpd start; next=1; fi; fi;
-     if [ $next -eq 0 ]; then /usr/bin/jem firewall start; next=1; fi;
     user: root
 
 responses:
