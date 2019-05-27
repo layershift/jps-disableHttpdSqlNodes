@@ -1,0 +1,3 @@
+Cmnd_Alias MONIT = /usr/bin/systemctl restart monit*, /usr/bin/systemctl stop monit*, /usr/bin/systemctl start monit*, /usr/bin/systemctl status monit*
+
+%ssh-access ALL = NOPASSWD: MONIT

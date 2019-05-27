@@ -1,0 +1,7 @@
+# enable monit apache monitor
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+# run-parts
+*/5 * * * * root /usr/bin/monit monitor apache > /dev/null
+

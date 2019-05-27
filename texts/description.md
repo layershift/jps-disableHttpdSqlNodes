@@ -1,0 +1,1 @@
+This add-on will disable Apache web server on the database node on prder to prevent access to PHPMyAdmin
