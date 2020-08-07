@@ -4,9 +4,10 @@ affected_by_bug : 'https://stackoverflow.com/questions/55857428/how-do-i-disable
 version: '1.6.2'
 type: update
 name: 'Disable Webserver on SQL nodes'
-homepage: http://jps.layershift.com/disableHttpdSqlNodes
-baseUrl: http://jps.layershift.com/disableHttpdSqlNodes
-logo: /images/featherDenied.png?_r=${fn.random}
+id: 'DisableWebserverOnSQLNodes'
+homepage: https://jps.layershift.com/disableHttpdSqlNodes
+baseUrl: https://jps.layershift.com/disableHttpdSqlNodes
+logo: /images/PhpMyAdmin_disable.png?_r=${fn.random}
 
 categories:
  - apps/others
