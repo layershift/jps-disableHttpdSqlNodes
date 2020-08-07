@@ -31,6 +31,11 @@
 
 <body>
     <div id="container">
+        <p><textarea style="width: 900px; height: 400px;">
+            <?php
+                echo file_get_contents('texts/description.md');
+            ?></textarea>
+        </p> 	
     
         <p>
             Deploy Disable Webserver on SQL nodes to Layershift Cloud <b>Existing</b> Environment

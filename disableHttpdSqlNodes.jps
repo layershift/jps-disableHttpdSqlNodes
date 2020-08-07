@@ -1,6 +1,6 @@
 _info : 'https://docs.cloudscripting.com/1.6.2/'
 affected_by_bug : 'JE-47379 ([Dockerized] Add an ability to turn off the phpPgAdmin'
-affected_by_bug : 'https://stackoverflow.com/questions/55857428/how-do-i-disable-ingress-from-the-internet-to-jelastic-nodes/55972075#55972075'
+affected_by_bug_ : 'https://stackoverflow.com/questions/55857428/how-do-i-disable-ingress-from-the-internet-to-jelastic-nodes/55972075#55972075'
 version: '1.6.2'
 type: update
 name: 'Disable Webserver on SQL nodes'
