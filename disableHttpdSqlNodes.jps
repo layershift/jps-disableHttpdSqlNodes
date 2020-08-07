@@ -7,7 +7,7 @@ name: 'Disable Webserver on SQL nodes'
 id: 'DisableWebserverOnSQLNodes'
 homepage: https://jps.layershift.com/disableHttpdSqlNodes
 baseUrl: https://jps.layershift.com/disableHttpdSqlNodes
-logo: /images/PhpMyAdmin_disable.png?_r=${fn.random}
+logo: /images/PhpMyAdmin_disable_2.png?_r=${fn.random}
 
 categories:
  - apps/others
